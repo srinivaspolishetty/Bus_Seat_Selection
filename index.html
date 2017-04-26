@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".reserved input").prop('checked', true);
+            $(".reserved input").prop('disabled', true);
+            $("label").click(function(){
+                if(!$(this).hasClass("reserved")){
+                    if($(this).find("input").is(":checked")){
+                    $(this).addClass("selected");
+                    }else{
+                        console.log("selected");
+                        $(this).removeClass("selected");
+                    }
+                }
+                else{
+                    alert("Already booked");
+                }
+            })
+        });
+    </script>
+
+
+
+    
+</head>
+<body>
+    <div class="row info">
+        <div class="col-sm-4"><label class="reserved"><input type="checkbox" class="cust-checkbox" disabled><span></span>Reserve Seat </label></div>
+        <div class="col-sm-4"><label class="selected"><input type="checkbox" class="cust-checkbox" disabled><span></span>Selected Seat </label></div>
+        <div class="col-sm-4"><label ><input type="checkbox" class="cust-checkbox" disabled><span></span>Empty Seat </label></div>
+    </div>
+    <div class="seats">
+        <div class="row">
+            <div class="col-sm-4">
+                <label><input type="checkbox" class="cust-checkbox" ><span></span></label>
+                <label><input type="checkbox" class="cust-checkbox" ><span></span></label>
+                <label class="reserved"><input type="checkbox" class="cust-checkbox" ><span></span></label>    
+            </div>
+            <div class="col-sm-4">
+                <label><input type="checkbox" class="cust-checkbox" ><span></span></label>
+                <label class="reserved"><input type="checkbox" class="cust-checkbox" ><span></span></label>
+                <label><input type="checkbox" class="cust-checkbox" ><span></span></label>    
+            </div>
+            <div class="col-sm-4">
+                <label class="reserved"><input type="checkbox" class="cust-checkbox" ><span></span></label>
+                <label><input type="checkbox" class="cust-checkbox" ><span></span></label>
+                <label><input type="checkbox" class="cust-checkbox" ><span></span></label>    
+            </div>
+        </div>
+    </div>
+        
+</body>
+</html>
